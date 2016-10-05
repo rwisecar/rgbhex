@@ -1,4 +1,5 @@
 # Convert RGB values into HEX values
+
 def rgb_hex():
     invalid_msg = 'You have entered an invalid value. Please try again.'
 
@@ -18,8 +19,6 @@ def rgb_hex():
     val = (red << 16) + (green << 8) + blue
 
     print "%s" % (hex(val)[2:]).upper()
-
-rgb_hex()
 
 # Convert HEX values into RGV values
 
@@ -43,4 +42,23 @@ def hex_rgb():
 
     print 'rgb(%s %s %s)' % (red, green, blue)
 
-# hex_rgb()
+# Master Function to run program
+
+
+def convert():
+    while True:
+        option = raw_input('Enter 1 to convert RGB to HEX. Enter 2 to convert HEX to RGB. Enter X to leave the program. ')
+        if option == '1':
+            print('You have selected RGB to HEX.')
+            rgb_hex()
+        elif option == '2':
+            print('You have selected HEX to RGB.')
+            hex_rgb()
+        elif option.upper() == 'X':
+            print('You have opted to quit the program. Goodbye.')
+            break
+        else:
+            print('That is an invalid choice.')
+            break
+
+convert()
